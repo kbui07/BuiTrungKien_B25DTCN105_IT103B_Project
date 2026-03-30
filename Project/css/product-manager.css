@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f5f6fa;
+}
+
+/* ===== LAYOUT ===== */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== TOPBAR ===== */
+.topbar {
+    height: 60px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.topbar .right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.topbar span {
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.topbar img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+    width: 240px;
+    background: #fff;
+    height: 100%;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+}
+
+.sidebar h2 {
+    font-size: 18px;
+}
+
+.sidebar p {
+    font-size: 12px;
+    color: grey;
+    margin-bottom: 16px;
+    margin-left: 32px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+.sidebar li:hover,
+.sidebar .active {
+    background: #e6f0ff;
+    color: #2d6cdf;
+}
+
+/* ===== MAIN ===== */
+.main {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== HEADER ===== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 28px;
+}
+
+/* ===== ACTIONS ===== */
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+select {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 200px;
+}
+
+/* BUTTON */
+.btn-add {
+    background: #2d6cdf;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-add:hover {
+    background: #1f4fbf;
+}
+
+/* ===== SEARCH ===== */
+.search-box {
+    margin: 15px 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.search-box input {
+    width: 260px;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+
+}
+
+/* ===== TABLE ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 14px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+th {
+    background: #F9FAFB;
+    color: #667085;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+td {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* ===== STATUS ===== */
+.status {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.status.active {
+    background: #e6f7ee;
+    color: #28a745;
+}
+
+.status.stop {
+    background: #fdeaea;
+    color: #dc3545;
+}
+
+/* ===== ACTION ICON ===== */
+.delete {
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.edit {
+    color: orange;
+    cursor: pointer;
+}
+
+/* ===== PAGINATION ===== */
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+
+.pagination button {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+}
+
+.pagination button:hover {
+    background: #2d6cdf;
+}
+
+.active-page {
+    background: #2d6cdf;
+}

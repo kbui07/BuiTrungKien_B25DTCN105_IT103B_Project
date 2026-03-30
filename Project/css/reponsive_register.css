@@ -1,0 +1,34 @@
+
+@media (max-width: 576px) {
+    .container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .sub {
+        font-size: 18px;
+    }
+
+    .form-group input {
+        padding: 12px;
+        margin-bottom: 15px;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    .login {
+        font-size: 13px;
+    }
+}
