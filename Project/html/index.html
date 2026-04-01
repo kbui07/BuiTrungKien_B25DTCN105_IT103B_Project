@@ -4,9 +4,159 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang chủ</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
-    
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo"></div>
+
+        <input type="text" placeholder="Tìm kiếm" class="search">
+
+        <nav class="nav">
+            <a class="active">Trang chủ</a>
+            <a href="../html/subject-manager.html">Môn học</a>
+            <a href="../html/session-manager.html">Bài học</a>
+        </nav>
+
+        <div class="icons">
+            <span><svg xmlns="http://www.w3.org/2000/svg" width="22" height="20" viewBox="0 0 22 20" fill="none">
+            <path d="M5.75 0.75C2.989 0.75 0.75 2.966 0.75 5.7C0.75 7.907 1.625 13.145 10.238 18.44C10.3923 18.5339 10.5694 18.5835 10.75 18.5835C10.9306 18.5835 11.1077 18.5339 11.262 18.44C19.875 13.145 20.75 7.907 20.75 5.7C20.75 2.966 18.511 0.75 15.75 0.75C12.989 0.75 10.75 3.75 10.75 3.75C10.75 3.75 8.511 0.75 5.75 0.75Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg></span>
+            <span><svg xmlns="http://www.w3.org/2000/svg" width="19" height="24" viewBox="0 0 19 24" fill="none">
+            <path d="M17.75 22.75V20.0833C17.75 18.6688 17.2724 17.3123 16.4222 16.3121C15.5721 15.3119 14.419 14.75 13.2167 14.75H5.28333C4.08102 14.75 2.92795 15.3119 2.07778 16.3121C1.22762 17.3123 0.75 18.6688 0.75 20.0833V22.75M14.75 5.25C14.75 7.73528 12.7353 9.75 10.25 9.75C7.76472 9.75 5.75 7.73528 5.75 5.25C5.75 2.76472 7.76472 0.75 10.25 0.75C12.7353 0.75 14.75 2.76472 14.75 5.25Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg></span>
+        </div>
+    </header>
+
+    <div class="main">
+    <!-- FILTER -->
+    <div class="filter">
+        <span class="active">Tất cả môn học</span>
+        <span>Đã hoàn thành</span>
+        <span>Chưa hoàn thành</span>
+    </div>
+
+    <!-- COURSE LIST -->
+    <section class="courses">
+
+        <!-- CARD -->
+        <div class="card">
+            <h3>HTML cơ bản</h3>
+            <ul>
+                <li><img src="../assets/20260401-132922.png">Session 01: Tổng quan về HTML</li>
+                <li><img src="../assets/20260401-132922.png">Session 02: Thẻ Inline và Block</li>
+                <li><img src="../assets/20260401-132922.png">Session 03: Thẻ hình ảnh</li>
+                <li><img src="../assets/20260401-132922.png">Session 04: Thẻ chuyển trang</li>
+                <li><img src="../assets/20260401-132922.png">Session 05: Thẻ Semantic</li>
+            </ul>
+            <p class="more">Xem thêm</p>
+        </div>
+
+        <div class="card">
+            <h3>CSS cơ bản</h3>
+            <ul>
+                <li><img src="../assets/20260401-132922.png">Session 01: Tổng quan về CSS</li>
+                <li><img src="../assets/20260401-132922.png">Session 02: Nhúng CSS vào trang Web</li>
+                <li><img src="../assets/20260401-132922.png">Session 03: Position</li>
+                <li><img src="../assets/20260401-132922.png">Session 04: Flexbox</li>
+                <li><img src="../assets/20260401-132922.png">Session 05: Animation</li>
+            </ul>
+            <p class="more">Xem thêm</p>
+        </div>
+
+        <div class="card">
+            <h3>JavaScript cơ bản</h3>
+            <ul>
+                <li><img src="../assets/20260401-132922.png">Session 01: Tổng quan ngôn ngữ JavaScript</li>
+                <li><img src="../assets/20260401-132922.png">Session 02: Khai báo biến</li>
+                <li><img src="../assets/20260401-132922.png">Session 03: Câu lệnh điều kiện</li>
+                <li><img src="../assets/20260401-132922.png">Session 04: Vòng lặp</li>
+                <li><img src="../assets/20260401-132922.png">Session 05: Mảng</li>
+            </ul>
+            <p class="more">Xem thêm</p>
+        </div>
+
+        <div class="card">
+            <h3>Lập trình với React.js</h3>
+            <ul>
+                <li><img src="../assets/20260401-132922.png">Session 01: Tổng quan về React.js</li>
+                <li><img src="../assets/20260401-132922.png">Session 02: Props, State, Event</li>
+                <li><img src="../assets/20260401-132922.png">Session 03: React hook</li>
+                <li><img src="../assets/20260401-132922.png">Session 04: UI Framework</li>
+                <li><img src="../assets/20260401-132922.png">Session 05: React Router</li>
+            </ul>
+            <p class="more">Xem thêm</p>
+        </div>
+
+        <div class="card">
+            <h3>Lập trình với Java</h3>
+            <ul>
+                <li><img src="../assets/20260401-132922.png">Session 01: Tổng quan về ngôn ngữ Java</li>
+                <li><img src="../assets/20260401-132922.png">Session 02: Khai báo biến</li>
+                <li><img src="../assets/20260401-132922.png">Session 03: Câu lệnh điều kiện</li>
+                <li><img src="../assets/20260401-132922.png">Session 04: Vòng lặp</li>
+                <li><img src="../assets/20260401-132922.png">Session 05: Mảng</li>
+            </ul>
+            <p class="more">Xem thêm</p>
+        </div>
+
+        <div class="card empty">
+            <h3>Lập trình C</h3>
+            <p class="empty-text">Chưa có bài học nào</p>
+        </div>
+
+    </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-left">
+            <p>
+                Chúng tôi cung cấp giải pháp học tập, giúp học sinh và
+                sinh viên học tập tốt hơn và hiệu quả hơn.
+            </p>
+
+            <div class="social">
+                <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M16 1.57843C15.4121 1.84616 14.7791 2.02721 14.1152 2.1081C14.7932 1.69207 15.3135 1.03238 15.5586 0.246541C14.9238 0.631759 14.2222 0.912001 13.4728 1.06224C12.8755 0.408329 12.0218 0 11.0771 0C9.26548 0 7.79574 1.50716 7.79574 3.36583C7.79574 3.62971 7.82391 3.88588 7.88026 4.13242C5.15208 3.99182 2.73381 2.65318 1.11381 0.614421C0.831132 1.11328 0.669596 1.69207 0.669596 2.30842C0.669596 3.47562 1.24905 4.50608 2.12995 5.10991C1.59277 5.09354 1.08563 4.94041 0.642365 4.69002V4.73143C0.642365 6.36282 1.77402 7.7236 3.27663 8.03178C3.00147 8.11075 2.71128 8.15023 2.41169 8.15023C2.20039 8.15023 1.99378 8.13001 1.79374 8.09052C2.21166 9.42723 3.42313 10.4009 4.86001 10.4269C3.7368 11.3302 2.32059 11.8685 0.783234 11.8685C0.518398 11.8685 0.256383 11.8531 0 11.8223C1.45284 12.7757 3.17896 13.3333 5.03187 13.3333C11.0705 13.3333 14.3715 8.20513 14.3715 3.75683C14.3715 3.61045 14.3687 3.46407 14.3631 3.32057C15.0045 2.84579 15.5614 2.25352 16 1.57843Z" fill="white"/>
+                </svg></span>
+                <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M8.84757 3.81794C8.84757 3.98169 8.84757 4.51541 8.84757 5.27366H11.4546L11.1719 7.59763H8.84757C8.84757 11.1816 8.84757 15.9843 8.84757 15.9843H5.76238C5.76238 15.9843 5.76238 11.2452 5.76238 7.59763H4.15479V5.27366H5.76238C5.76238 4.35204 5.76238 3.69669 5.76238 3.51422C5.76238 2.64485 5.69688 2.23235 6.06629 1.55866C6.43588 0.885005 7.47838 -0.00543266 9.28147 0.0160048C11.085 0.0382236 11.8452 0.211724 11.8452 0.211724L11.4546 2.6885C11.4546 2.6885 10.3029 2.38441 9.73763 2.49279C9.1731 2.60119 8.84757 2.94894 8.84757 3.81794Z" fill="white"/>
+                </svg></span>
+                <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M11.8839 3.358C11.2245 2.59144 10.8791 1.60104 10.9066 0.592723L8.44275 0.533203C8.44275 0.533203 8.44275 0.638323 8.44275 0.780083V10.6602C8.47715 13.786 3.53859 13.7102 3.92931 10.2551C4.16819 8.88136 5.64435 8.03592 6.95603 8.51384V5.99992C4.10035 5.50264 1.39411 7.7756 1.42259 10.6713C1.67219 16.9513 10.6795 16.9521 10.9295 10.6713C10.8666 10.4465 10.9018 6.26152 10.8928 5.90856C12.0131 6.60568 13.3167 6.95416 14.6368 6.90952V4.3132C13.4163 4.3132 12.485 3.98872 11.8839 3.358Z" fill="white"/>
+                </svg></span>
+                <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <g clip-path="url(#clip0_1536_613)">
+                <path d="M8.00016 14.6666C6.57067 14.6666 5.54198 14.6659 4.73996 14.5882C3.94713 14.5113 3.43996 14.3636 3.03521 14.1093C2.57261 13.8186 2.18144 13.4275 1.89077 12.9649C1.63653 12.5602 1.48875 12.053 1.41198 11.2602C1.3342 10.4582 1.3335 9.42947 1.3335 7.99998C1.3335 6.57048 1.3342 5.5418 1.41198 4.73978C1.48875 3.94695 1.63653 3.43978 1.89077 3.03503C2.18143 2.57242 2.5726 2.18125 3.03521 1.89059C3.43996 1.63634 3.94713 1.48857 4.73996 1.4118C5.54188 1.33402 6.57057 1.33331 8.00016 1.33331C9.42966 1.33331 10.4583 1.33402 11.2604 1.4118C12.0532 1.48857 12.5604 1.63634 12.9651 1.89059C13.4277 2.18126 13.8188 2.57243 14.1095 3.03503C14.3638 3.43978 14.5115 3.94695 14.5883 4.73978C14.6661 5.5418 14.6668 6.57048 14.6668 7.99998C14.6668 9.42947 14.6661 10.4582 14.5883 11.2602C14.5115 12.053 14.3638 12.5602 14.1095 12.9649C13.8188 13.4275 13.4277 13.8186 12.9651 14.1093C12.5604 14.3636 12.0532 14.5113 11.2604 14.5882C10.4583 14.6659 9.42966 14.6666 8.00016 14.6666Z" fill="white" stroke="white" stroke-width="2"/>
+                <path d="M8.00016 11.3333C9.47292 11.3333 10.6668 10.1394 10.6668 8.66667C10.6668 7.19391 9.47292 6 8.00016 6C6.5274 6 5.3335 7.19391 5.3335 8.66667C5.3335 10.1394 6.5274 11.3333 8.00016 11.3333Z" fill="white" stroke="black" stroke-width="2"/>
+                <path d="M11.25 5.5C11.6642 5.5 12 5.16421 12 4.75C12 4.33579 11.6642 4 11.25 4C10.8358 4 10.5 4.33579 10.5 4.75C10.5 5.16421 10.8358 5.5 11.25 5.5Z" fill="black"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_1536_613">
+                <rect width="16" height="16" fill="white"/>
+                </clipPath>
+                </defs>
+                </svg></span>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <h4>Danh mục</h4>
+            <a href="../html/subject-manager.html">Môn học</a>
+            <a href="../html/session-manager.html">Bài học</a>
+            <a href="#">Ghi chú</a>
+        </div>
+
+        <div class="footer-right">
+            <div class="footer-col">
+            <h4>Hỗ trợ khách hàng</h4>
+            <p>Tìm kiếm dịch vụ</p>
+            <p>Điều khoản sử dụng</p>
+            <p>Chính sách và điều khoản</p>
+        </div>
+</footer>
 </body>
 </html>

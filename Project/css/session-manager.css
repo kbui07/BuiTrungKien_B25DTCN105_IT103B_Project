@@ -6,7 +6,7 @@
 }
 
 body {
-    background: #f5f6fa;
+    background-color: white;
 }
 
 /* ===== LAYOUT ===== */
@@ -52,7 +52,7 @@ body {
 /* ===== SIDEBAR ===== */
 .sidebar {
     width: 240px;
-    background: #fff;
+    background: #F6F8F9;
     height: 100%;
     padding: 20px;
     border-right: 1px solid #ddd;
