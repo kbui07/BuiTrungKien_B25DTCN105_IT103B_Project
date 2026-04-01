@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    box-sizing: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* overlay */
+.confirm-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.2);
+    justify-content: center;
+    align-items: center;
+}
+
+/* box */
+.confirm-box {
+    background: #fff;
+    width: 520px;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    text-align: left;
+}
+
+/* icon */
+.confirm-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #fdecea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* title */
+.confirm-box h2 {
+    margin: 0 0 10px;
+}
+
+/* text */
+.confirm-box p {
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+
+/* actions */
+.confirm-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* buttons */
+.btn-cancel {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    background: #f5f5f5;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-delete {
+    padding: 10px 18px 10px 18px;
+    border: none;
+    background: #D92D20;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-delete:hover {
+    background: #c0392b;
+}

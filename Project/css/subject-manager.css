@@ -1,0 +1,451 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f5f6fa;
+}
+
+/* ===== LAYOUT ===== */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== TOPBAR ===== */
+.topbar {
+    height: 60px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.topbar .right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.topbar span {
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.topbar img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+    width: 240px;
+    background: #fff;
+    height: 100%;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+}
+
+.sidebar h2 {
+    font-size: 18px;
+}
+
+.sidebar p {
+    font-size: 12px;
+    color: grey;
+    margin-bottom: 16px;
+    margin-left: 32px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sidebar li a {
+    text-decoration: none;
+    color: black;
+}
+
+.sidebar li:hover,
+.sidebar .active {
+    background: #e6f0ff;
+    color: #2d6cdf;
+    padding: 15px;
+}
+
+/* ===== MAIN ===== */
+.main {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== HEADER ===== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 28px;
+}
+
+/* ===== ACTIONS ===== */
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+select {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 200px;
+}
+
+/* BUTTON */
+.btn-add {
+    background: #2d6cdf;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-add:hover {
+    background: #1f4fbf;
+}
+
+/* ===== SEARCH ===== */
+.search-box {
+    margin: 15px 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.search-box input {
+    width: 260px;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+
+}
+
+/* ===== TABLE ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 14px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+th {
+    background: #F9FAFB;
+    color: #667085;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+td {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* ===== STATUS ===== */
+/* Status chung */
+.status {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* DẤU CHẤM */
+.status::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Đang hoạt động */
+.status.active {
+    background: #e6f7ee;
+    color: #28a745;
+}
+
+.status.active::before {
+    background: #28a745;
+}
+
+/* Ngừng hoạt động */
+.status.stop {
+    background: #fdeaea;
+    color: #dc3545;
+}
+
+.status.stop::before {
+    background: #dc3545;
+}
+
+/* ===== ACTION ICON ===== */
+.delete {
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.edit {
+    color: orange;
+    cursor: pointer;
+}
+
+/* ===== PAGINATION ===== */
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+
+.pagination button {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+}
+
+.pagination button:hover {
+    background: #2d6cdf;
+}
+
+.active-page {
+    background: #2d6cdf;
+}
+
+/* ===== MODAL ===== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-box {
+    width: 520px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: fadeIn 0.25s ease;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-header h3 {
+    font-size: 18px;
+}
+
+.close-btn {
+    cursor: pointer;
+    font-size: 20px;
+    color: #666;
+}
+
+.modal-body {
+    padding: 16px 20px;
+}
+
+.modal-body label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.modal-body input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 16px;
+}
+
+/* Radio */
+.radio-group {
+    display: flex;
+    gap: 20px;
+}
+
+/* Footer */
+.modal-footer {
+    padding: 12px 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    border-top: 1px solid #eee;
+}
+
+.btn-cancel {
+    background: #f0f0f0;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-submit {
+    background: #2d6cdf;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Input lỗi */
+.input-error {
+    border: 1px solid #dc3545 !important;
+}
+
+/* Text lỗi */
+.error-text {
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* overlay */
+.confirm-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.2);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+/* box */
+.confirm-box {
+    background: #fff;
+    width: 520px;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    text-align: left;
+}
+
+/* icon */
+.confirm-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #fdecea;
+    color: #e74c3c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: 16px;
+}
+
+/* title */
+.confirm-box h2 {
+    margin: 0 0 10px;
+}
+
+/* text */
+.confirm-box p {
+    color: #555;
+    line-height: 1.5;
+}
+
+/* actions */
+.confirm-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* buttons */
+.btn-cancel {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    background: #f5f5f5;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-delete {
+    padding: 8px 16px;
+    border: none;
+    background: #e74c3c;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-delete:hover {
+    background: #c0392b;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
