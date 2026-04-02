@@ -250,12 +250,13 @@ td {
 }
 
 .pagination button:hover {
-    background: #2d6cdf;
+    background: #0066FF;
     color: white;
 }
 
-.active-page {
-    background-color: #2d6cdf;
+button.active-page {
+    background-color: #0066FF;
+    color: white;
 }
 
 /* ===== MODAL ===== */

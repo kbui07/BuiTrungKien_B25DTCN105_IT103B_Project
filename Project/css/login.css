@@ -99,6 +99,17 @@ button:hover {
     text-decoration: none;
 }
 
+.error {
+    color: red;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.input-error {
+    border: 1px solid red !important;
+}
+
+
 @media (max-width: 576px) {
 
     body {
