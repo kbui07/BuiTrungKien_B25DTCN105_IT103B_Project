@@ -35,6 +35,10 @@
     //lọc
     let currentFilter = "all";
 
+    //phân trang
+    let currentPage = 1;
+    let itemsPerPage = 5;
+
     //render
     function render() {
         let data = JSON.parse(localStorage.getItem("sessions")) || [];
@@ -54,9 +58,19 @@
                 data.sort((a, b) => b.duration - a.duration);
             }
 
+        //phân trang
+
+         let totalPages = Math.ceil(data.length / itemsPerPage) || 1;
+
+        if (currentPage > totalPages) currentPage = totalPages;
+
+        let start = (currentPage - 1) * itemsPerPage;
+        let pageData = data.slice(start, start + itemsPerPage);
+
+        // ===== RENDER TABLE =====
         tbody.innerHTML = "";
 
-        data.forEach(s => {
+        pageData.forEach(s => {
             tbody.innerHTML += `
             <tr>
                 <td><input type="checkbox"></td>
@@ -86,23 +100,66 @@
             </tr>
             `;
         });
+         renderPagination(totalPages);
     }
+
+    //render phân trang
+    function renderPagination(totalPages) {
+    let pagination = document.querySelector(".pagination");
+    pagination.innerHTML = "";
+
+    // nút <
+    let prev = document.createElement("button");
+    prev.innerText = "<";
+    prev.disabled = currentPage === 1;
+    prev.onclick = () => changePage(currentPage - 1);
+    pagination.appendChild(prev);
+
+    // số trang
+    for (let i = 1; i <= totalPages; i++) {
+        let btn = document.createElement("button");
+        btn.innerText = i;
+
+        if (i === currentPage) {
+            btn.classList.add("active-page");
+        }
+
+        btn.onclick = () => changePage(i);
+        pagination.appendChild(btn);
+    }
+
+    // nút >
+    let next = document.createElement("button");
+    next.innerText = ">";
+    next.disabled = currentPage === totalPages;
+    next.onclick = () => changePage(currentPage + 1);
+    pagination.appendChild(next);
+}
+//chuyển trang
+function changePage(page) {
+    currentPage = page;
+    render();
+}
+
     render();
 
     //sắp xếp
     document.getElementById("sortName").onclick = () => {
         currentSort = "name";
+        currentPage = 1;
         render();
     };
 
     document.getElementById("sortTime").onclick = () => {
         currentSort = "time";
+        currentPage = 1;
         render();
     };
 
     //LỌC
     document.getElementById("filterStatus").onchange = (e) => {
         currentFilter = e.target.value;
+        currentPage = 1;
         render();
     };
 

@@ -22,6 +22,9 @@ let currentSort = "";
 let currentFilter = "all";
 let currentSearch = "";
 
+let currentPage = 1;
+let itemsPerPage = 5;
+
 
 //Hiển thị
 function renderSubjects() {
@@ -44,17 +47,26 @@ function renderSubjects() {
         data.sort((a, b) => a.name.localeCompare(b.name));
         }
 
+    //phân trang
+    let totalPages = Math.ceil(data.length / itemsPerPage) || 1;
+
+    if (currentPage > totalPages) currentPage = totalPages;
+
+    let start = (currentPage - 1) * itemsPerPage;
+    let pageData = data.slice(start, start + itemsPerPage);
+
+    //render
     tbody.innerHTML = "";
-    data.forEach(s => {
+    pageData.forEach(s => {
         tbody.innerHTML += `
         <tr>
             <td>${s.name}</td>
-                <td>
-                    <span class="status ${s.status}">
-                        ${s.status === "active" ? "Đang hoạt động" : "Ngừng hoạt động"}
-                    </span>
-                </td>
-                <td>
+            <td>
+                <span class="status ${s.status}">
+                    ${s.status === "active" ? "Đang hoạt động" : "Ngừng hoạt động"}
+                </span>
+            </td>
+            <td>
                     <span class="delete" data-id="${s.id}"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="19"
                                     viewBox="0 0 17 19" fill="none">
                                     <path
@@ -73,6 +85,46 @@ function renderSubjects() {
             </tr>
             `;
     });
+    renderPagination(totalPages);
+}
+
+//hàm phân trang
+function renderPagination(totalPages) {
+    let pagination = document.querySelector(".pagination");
+    pagination.innerHTML = "";
+
+    //Trước
+    let prevBtn = document.createElement("button");
+    prevBtn.innerText = "<";
+    prevBtn.disabled = currentPage === 1;
+    prevBtn.onclick = () => changePage(currentPage - 1);
+    pagination.appendChild(prevBtn);
+
+    // Số trang
+    for (let i = 1; i <= totalPages; i++) {
+        let btn = document.createElement("button");
+        btn.innerText = i;
+
+        if (i === currentPage) {
+            btn.classList.add("active-page");
+        }
+
+        btn.onclick = () => changePage(i);
+        pagination.appendChild(btn);
+    }
+
+    //Sau
+    let nextBtn = document.createElement("button");
+    nextBtn.innerText = ">";
+    nextBtn.disabled = currentPage === totalPages;
+    nextBtn.onclick = () => changePage(currentPage + 1);
+    pagination.appendChild(nextBtn);
+}
+
+//hàm đổi trang
+function changePage(page) {
+    currentPage = page;
+    renderSubjects();
 }
 
 renderSubjects();
@@ -80,18 +132,21 @@ renderSubjects();
 //sắp xếp
 document.getElementById("sortName").onclick = () => {
     currentSort = "name";
+    currentPage = 1;
     renderSubjects();
     };
 
 //lọc
 document.getElementById("filterStatus").onchange = (e) => {
     currentFilter = e.target.value;
+    currentPage = 1;
     renderSubjects();
 };
 
 //tìm kiếm
 document.getElementById("searchInput").oninput = (e) => {
     currentSearch = e.target.value.toLowerCase().trim();
+    currentPage = 1;
     renderSubjects();
 };
 
