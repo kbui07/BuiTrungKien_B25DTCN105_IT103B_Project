@@ -36,6 +36,13 @@ document.getElementById("registerForm").onsubmit = function(e) {
         email.classList.add("input-error");
         isValidate = false;
     }
+    //check eamil đã tồn tại
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    if(users.some(user => user.email === email.value)) {
+        document.getElementById("emailError").innerText = "Email đã tồn tại";
+        email.classList.add("input-error");
+        isValidate = false;
+    }
 
     //password
     if(password.value.trim() === "") {
@@ -66,7 +73,6 @@ document.getElementById("registerForm").onsubmit = function(e) {
 
         localStorage.setItem("users", JSON.stringify(users));
 
-        alert("Đăng ký thành công!");
         window.location.href = "login.html";
         }
     };

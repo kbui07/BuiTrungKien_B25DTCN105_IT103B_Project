@@ -42,8 +42,22 @@ document.getElementById("loginForm").onsubmit = function(e) {
         return; 
     }
 
-    localStorage.setItem("currentUser", JSON.stringify(findUser));
 
-    alert("Đăng nhập thành công");
-    window.location.href = "subject-manager.html";
+    Toastify({
+        text: " Đăng nhập thành công!",
+        duration: 800,
+        gravity: "top",
+        position: "right",
+        style: {
+            background: "#4CAF50",
+            borderRadius: "8px"
+        },
+        callback: function () {
+            localStorage.setItem("currentUser", JSON.stringify(findUser));
+            window.location.href = "subject-manager.html";
+        }
+    }).showToast();
+    // localStorage.setItem("currentUser", JSON.stringify(findUser));
+
+    // window.location.href = "subject-manager.html";
 } 

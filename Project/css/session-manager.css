@@ -183,7 +183,6 @@ td {
     font-weight: 500;
 }
 
-
 /* ===== STATUS ===== */
 /* Status chung */
 .status {
@@ -224,6 +223,17 @@ td {
     background: #dc3545;
 }
 
+/* ===== ACTION ICON ===== */
+.delete {
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.edit {
+    color: orange;
+    cursor: pointer;
+}
+
 /* ===== PAGINATION ===== */
 .pagination {
     margin-top: 20px;
@@ -240,9 +250,257 @@ td {
 }
 
 .pagination button:hover {
-    background: #2d6cdf;
+    background: #0066FF;
+    color: white;
 }
 
-.active-page {
+button.active-page {
+    background-color: #0066FF;
+    color: white;
+}
+
+/* ===== MODAL ===== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-box {
+    width: 520px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: fadeIn 0.25s ease;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-header h3 {
+    font-size: 18px;
+}
+
+.close-btn {
+    cursor: pointer;
+    font-size: 20px;
+    color: #666;
+}
+
+.modal-body {
+    padding: 16px 20px;
+}
+
+.modal-body label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.modal-body input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 16px;
+}
+
+.modal-body input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 16px;
+}
+
+.modal-body select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 16px;
+}
+
+
+/* Radio */
+.radio-group {
+    display: flex;
+    gap: 20px;
+}
+
+/* Footer */
+.modal-footer {
+    padding: 12px 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    border-top: 1px solid #eee;
+}
+
+.btn-cancel {
+    background: #f0f0f0;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-submit {
     background: #2d6cdf;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Input lỗi */
+.input-error {
+    border: 1px solid #dc3545 !important;
+}
+
+/* Text lỗi */
+.error-text {
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* overlay */
+.confirm-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.2);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+/* box */
+.confirm-box {
+    background: #fff;
+    width: 520px;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    text-align: left;
+}
+
+/* icon */
+.confirm-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #fdecea;
+    color: #e74c3c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: 16px;
+}
+
+/* title */
+.confirm-box h2 {
+    margin: 0 0 10px;
+}
+
+/* text */
+.confirm-box p {
+    color: #555;
+    line-height: 1.5;
+}
+
+/* actions */
+.confirm-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* buttons */
+.btn-cancel {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    background: #f5f5f5;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-delete {
+    padding: 8px 16px;
+    border: none;
+    background: #e74c3c;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-delete:hover {
+    background: #c0392b;
+}
+
+.user-menu {
+    position: relative;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    width: 120px;
+    display: none;
+}
+
+.dropdown button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: white;
+    cursor: pointer;
+}
+
+.dropdown button:hover {
+    background: #f5f5f5;
+}
+
+.dropdown.show {
+    display: block;
+}
+
+.sort {
+    cursor: pointer;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
